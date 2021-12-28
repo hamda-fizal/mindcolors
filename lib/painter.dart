@@ -109,7 +109,12 @@ class PainterView extends StatelessWidget {
     );
   }
 
-  String getCurrentName() => _user.displayName;
+  String getCurrentName() {
+    if(_user.displayName!="")
+      return _user.displayName;
+    else
+      return _user.email;
+  }
   static String getCurrentMail() => _user.email;
 }
 

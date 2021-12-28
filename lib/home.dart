@@ -1,18 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mindcolors/gd.dart';
 import 'package:mindcolors/painter.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 
-class Home extends StatefulWidget {
-  @override
-  _homescreenState createState() => _homescreenState();
-}
-
-class _homescreenState extends State<Home> {
-
-
+class Home extends StatelessWidget {
 
   void add_moods(int mood){
     String date;
@@ -27,8 +21,8 @@ class _homescreenState extends State<Home> {
           'mood': mood, 'date': date
         },
       ])
-      }).then((_) {
-        print("success!");
+    }).then((_) {
+      print("success!");
     });
 
   }
@@ -86,7 +80,7 @@ class _homescreenState extends State<Home> {
                     minWidth: 0,
                     onPressed: () {
 
-                        add_moods(0);
+                      add_moods(0);
 
                     },
                     child: Column(
@@ -102,7 +96,7 @@ class _homescreenState extends State<Home> {
                                   Colors.amberAccent[700]
                                 ]),
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(50.0)),
+                                BorderRadius.all(Radius.circular(50.0)),
                               ),
                               height: 150.0,
                               width: 150.0,
@@ -126,8 +120,8 @@ class _homescreenState extends State<Home> {
                     minWidth: 0,
                     onPressed: () {
 
-                        add_moods(1);
-                      },
+                      add_moods(1);
+                    },
                     child: Column(
                       children: <Widget>[
                         Flexible(
@@ -142,7 +136,7 @@ class _homescreenState extends State<Home> {
                                 ]),
                                 shape: BoxShape.rectangle,
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(50.0)),
+                                BorderRadius.all(Radius.circular(50.0)),
                               ),
                               height: 150.0,
                               width: 150.0,
@@ -181,7 +175,7 @@ class _homescreenState extends State<Home> {
                                   Colors.green[700]
                                 ]),
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(50.0)),
+                                BorderRadius.all(Radius.circular(50.0)),
                               ),
                               height: 150.0,
                               width: 150.0,
@@ -205,7 +199,7 @@ class _homescreenState extends State<Home> {
                     minWidth: 0,
                     onPressed: () {
                       add_moods(3);
-                      },
+                    },
                     child: Column(
                       children: <Widget>[
                         Flexible(
@@ -219,7 +213,7 @@ class _homescreenState extends State<Home> {
                                   Colors.indigo[700]
                                 ]),
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(50.0)),
+                                BorderRadius.all(Radius.circular(50.0)),
                               ),
                               height: 150.0,
                               width: 150.0,
@@ -258,13 +252,13 @@ class _homescreenState extends State<Home> {
                                   Colors.blue[400]
                                 ]),
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(50.0)),
+                                BorderRadius.all(Radius.circular(50.0)),
                               ),
                               height: 150.0,
                               width: 150.0,
                               child: Image.asset(
                                 "assets/sadness.png",
-                               ),
+                              ),
                             ),
                           ),
                         ),
@@ -297,7 +291,7 @@ class _homescreenState extends State<Home> {
                                   Colors.pinkAccent[700]
                                 ]),
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(50.0)),
+                                BorderRadius.all(Radius.circular(50.0)),
                               ),
                               height: 150.0,
                               width: 150.0,
@@ -331,10 +325,11 @@ class _homescreenState extends State<Home> {
                       style: TextStyle(fontSize: 20),
                     ),
                     onPressed: () {
-
+                      //   Navigator.push(context, MaterialPageRoute(builder: (context) => GenerateData()));
                       Navigator.push(context, MaterialPageRoute(builder: (context) => PainterView()));
-
-                    })),
+                    }
+                )
+            ),
           ),
         ],
       ),
